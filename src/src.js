@@ -36,17 +36,15 @@ Poker.prototype.checkForMatches = function(hand, matches) {
 	else return this.checkForMatches(hand.splice(1, hand.length-1), matches);
 };
 
-Poker.prototype.checkForStraight = function(hand){
+Poker.prototype.checkForStraight = function(hand, sum){
+	var sum = sum || 0;
 	Poker.sortHand(hand);
-	var score = 0;
-	for(var i = 0; i < hand.length; i++){
-		if('undefined' !== typeof(hand[i+1]) && (hand[i][0] - hand[i+1][0]) !== 1){
-			return 0;
-		}
 
-		score += hand[i][0];
+	if(hand.length <= 1) return sum + hand[0][0];
+	else if('undefined' !== typeof(hand[1]) && (hand[0][0] - hand[1][0]) !== 1){
+		return 0;
 	}
-	return score;
+	else return this.checkForStraight(hand.splice(1, hand.length-1), sum + hand[0][0]);
 };
 
 Poker.prototype.checkForFlush = function(hand) {
