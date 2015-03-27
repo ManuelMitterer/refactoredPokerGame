@@ -21,4 +21,9 @@ describe('Array', function(){
     assert.deepEqual(hand3, tempHand);
   });
 
+  it("should return highest card", function(){
+    var highest = poker.getHighestCard(hand1);
+    assert.deepEqual(highest[0], 6);
+  });
+
 })

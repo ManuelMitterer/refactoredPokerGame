@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src\src.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">src\src.js</span></h1>
+    <h2>
+        Statements: <span class="metric">24.42% <small>(21 / 86)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">9.09% <small>(4 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">28.57% <small>(4 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">24.42% <small>(21 / 86)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">src/</a> &#187; src.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span></td><td class="text"><pre class="prettyprint lang-js">function Poker() {}
+&nbsp;
+Poker.prototype.getHighestCard = function(hand, skipCards) {
+	skipCards = skipCards || 0;
+	Poker.sortHand(hand);
+&nbsp;
+	return hand[0+skipCards];
+};
+&nbsp;
+Poker.sortHand = function(hand) {
+	hand.sort(function(array1, array2) {
+&nbsp;
+		<span class="missing-if-branch" title="if path not taken" >I</span>if(array1[0] &gt; array2[0]) {
+<span class="cstat-no" title="statement not covered" >			return -1;</span>
+		} else <span class="missing-if-branch" title="else path not taken" >E</span>if(array1[0] &lt; array2[0]) {
+			return 1;
+		}
+<span class="cstat-no" title="statement not covered" >		return 0;</span>
+	});
+};
+&nbsp;
+Poker.prototype.checkForPair = <span class="fstat-no" title="function not covered" >function(hand, skipPairs) {</span>
+<span class="cstat-no" title="statement not covered" >	skipPairs = skipPairs || 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	Poker.sortHand(hand);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	for(var i = 0; i &lt; hand.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >		if(typeof(hand[i+1]) !== 'undefined' &amp;&amp; hand[i][0] === hand[i+1][0]) {</span>
+<span class="cstat-no" title="statement not covered" >			if (skipPairs &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >				skipPairs--;</span>
+<span class="cstat-no" title="statement not covered" >				i++;</span>
+<span class="cstat-no" title="statement not covered" >				continue;</span>
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			return hand[i][0] * 2;</span>
+		}
+	}
+<span class="cstat-no" title="statement not covered" >	return 0;</span>
+};
+&nbsp;
+Poker.prototype.checkForTwoPair = <span class="fstat-no" title="function not covered" >function(hand) {</span>
+<span class="cstat-no" title="statement not covered" >	firstPair  = this.checkForPair(hand);</span>
+<span class="cstat-no" title="statement not covered" >	secondPair = this.checkForPair(hand, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return [firstPair, secondPair];</span>
+};
+&nbsp;
+Poker.prototype.checkForTriple = <span class="fstat-no" title="function not covered" >function(hand) {</span>
+<span class="cstat-no" title="statement not covered" >	Poker.sortHand(hand);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	for(var i = 0; i &lt; hand.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >		if(hand[i][0] === hand[i+1][0] &amp;&amp; hand[i][0] === hand[i+2][0] ) {</span>
+<span class="cstat-no" title="statement not covered" >			return hand[i][0] * 3;</span>
+		}
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return 0;</span>
+};
+&nbsp;
+Poker.prototype.checkForStraight = <span class="fstat-no" title="function not covered" >function(hand){</span>
+<span class="cstat-no" title="statement not covered" >	Poker.sortHand(hand);</span>
+<span class="cstat-no" title="statement not covered" >	var score = 0;</span>
+<span class="cstat-no" title="statement not covered" >	for(var i = 0; i &lt; hand.length; i++){</span>
+<span class="cstat-no" title="statement not covered" >		if('undefined' !== typeof(hand[i+1]) &amp;&amp; (hand[i][0] - hand[i+1][0]) !== 1){</span>
+<span class="cstat-no" title="statement not covered" >			return 0;</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		score += hand[i][0];</span>
+	}
+<span class="cstat-no" title="statement not covered" >	return score;</span>
+};
+&nbsp;
+Poker.prototype.checkForFlush = <span class="fstat-no" title="function not covered" >function(hand) {</span>
+<span class="cstat-no" title="statement not covered" >	var color = hand[0][1];</span>
+<span class="cstat-no" title="statement not covered" >	for(var i = 0; i &lt; hand.length; i++){</span>
+<span class="cstat-no" title="statement not covered" >		if (hand[i][1] !== color) {</span>
+<span class="cstat-no" title="statement not covered" >			return 0;</span>
+		}
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return this.getHighestCard(hand)[0];</span>
+};
+&nbsp;
+Poker.prototype.checkForFullHouse = <span class="fstat-no" title="function not covered" >function(hand) {</span>
+<span class="cstat-no" title="statement not covered" >	var twoPairScore = this.checkForTwoPair(hand);</span>
+<span class="cstat-no" title="statement not covered" >	var tripleScore = this.checkForTriple(hand);</span>
+<span class="cstat-no" title="statement not covered" >	var fourOfAKindScore = this.checkForFourOfAKind(hand);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if(twoPairScore[0] &gt; 0 &amp;&amp; twoPairScore[1] &gt; 0 &amp;&amp; tripleScore &gt; 0 &amp;&amp; fourOfAKindScore === 0) {</span>
+<span class="cstat-no" title="statement not covered" >		return this.getHighestCard(hand)[0];</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return 0;</span>
+};
+&nbsp;
+Poker.prototype.checkForFourOfAKind = <span class="fstat-no" title="function not covered" >function(hand) {</span>
+<span class="cstat-no" title="statement not covered" >	var firstPair  = this.checkForPair(hand);</span>
+<span class="cstat-no" title="statement not covered" >	var secondPair = this.checkForPair(hand, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if(firstPair === secondPair)</span>
+	{
+<span class="cstat-no" title="statement not covered" >		return firstPair * 2;</span>
+	}
+<span class="cstat-no" title="statement not covered" >	return 0;</span>
+};
+&nbsp;
+Poker.prototype.checkForStraightFlush = <span class="fstat-no" title="function not covered" >function(hand) {</span>
+<span class="cstat-no" title="statement not covered" >	var flush = this.checkForFlush(hand);</span>
+<span class="cstat-no" title="statement not covered" >	var straight = this.checkForStraight(hand);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if(flush &gt; 0 &amp;&amp; straight &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >		return this.getHighestCard(hand)[0];</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return 0;</span>
+};
+&nbsp;
+Poker.prototype.compareHighestCards = <span class="fstat-no" title="function not covered" >function(hand1, hand2){</span>
+<span class="cstat-no" title="statement not covered" >	var highestCardFirstHand = [];</span>
+<span class="cstat-no" title="statement not covered" >	var highestCardSecondHand = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	for(var i = 0; i &lt; hand1.length; i++){</span>
+<span class="cstat-no" title="statement not covered" >		highestCardFirstHand = this.getHighestCard(hand1, i);</span>
+<span class="cstat-no" title="statement not covered" >		highestCardSecondHand = this.getHighestCard(hand2, i);</span>
+<span class="cstat-no" title="statement not covered" >		if(highestCardFirstHand[0] &gt; highestCardSecondHand[0])</span>
+		{
+<span class="cstat-no" title="statement not covered" >			return {'hand': hand1, 'card': highestCardFirstHand};</span>
+		}
+		else <span class="cstat-no" title="statement not covered" >if(highestCardFirstHand[0] &lt; highestCardSecondHand[0]){</span>
+<span class="cstat-no" title="statement not covered" >			return {'hand': hand2, 'card': highestCardSecondHand};</span>
+		}
+	}
+<span class="cstat-no" title="statement not covered" >	return {};</span>
+};
+&nbsp;
+Poker.prototype.compareHighestPair = <span class="fstat-no" title="function not covered" >function(hand1, hand2) {</span>
+<span class="cstat-no" title="statement not covered" >	var hand1Pair = this.checkForPair(hand1);</span>
+<span class="cstat-no" title="statement not covered" >	var hand2Pair = this.checkForPair(hand2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if (hand1Pair &gt; hand2Pair) {</span>
+<span class="cstat-no" title="statement not covered" >		return {'hand': hand1, 'score': hand1Pair / 2};</span>
+	} else <span class="cstat-no" title="statement not covered" >if(hand1Pair &lt; hand2Pair) {</span>
+<span class="cstat-no" title="statement not covered" >		return {'hand': hand2, 'score': hand2Pair / 2};</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return {};</span>
+};
+&nbsp;
+module.exports = Poker;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 27 2015 14:38:55 GMT+0100 (Mitteleuropäische Zeit)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
