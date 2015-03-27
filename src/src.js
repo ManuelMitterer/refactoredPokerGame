@@ -61,15 +61,14 @@ Poker.prototype.checkForFullHouse = function(hand) {
 	return 0;
 };
 
-Poker.prototype.checkForFourOfAKind = function(hand) {
-	var firstPair  = this.checkForPair(hand);
-	var secondPair = this.checkForPair(hand, 1);
+Poker.prototype.checkForFourOfAKind = function(hand, count) {
+	Poker.sortHand(hand);
 
-	if(firstPair === secondPair)
-	{
-		return firstPair * 2;
-	}
-	return 0;
+	var count = count || 0;
+	if(hand.length < 1 && count !== 3) return 0;
+	else if(count === 3) return hand[0][0] * 4;
+	else if(typeof(hand[1]) !== 'undefined' && hand[0][0] === hand[1][0]) return this.checkForFourOfAKind(hand.splice(1, hand.length-1), ++count);
+	return this.checkForFourOfAKind(hand.splice(1, hand.length-1));
 };
 
 Poker.prototype.checkForStraightFlush = function(hand) {

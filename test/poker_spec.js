@@ -1,7 +1,7 @@
 var assert = require("assert"),
     Poker = require("../src/src.js"),
     should = require("should"),
-    poker, hand1, hand2, hand3, hand4, hand5;
+    poker, hand1, hand2, hand3, hand4, hand5, hand6;
 
 describe('Array', function(){
   beforeEach(function(){
@@ -11,6 +11,7 @@ describe('Array', function(){
     hand3 = [[2, 'D'], [2, 'H'], [5, 'D'], [11, 'H'], [12, 'H']];
     hand4 = [[2, 'D'], [2, 'H'], [11, 'D'], [11, 'H'], [12, 'H']];
     hand5 = [[2, 'D'], [2, 'H'], [2, 'C'], [5, 'H'], [5, 'C']];
+    hand6 = [[3, 'D'], [3, 'H'], [3, 'C'], [3, 'S'], [5, 'C']];
   });
 
   it('should be different', function(){
@@ -82,5 +83,10 @@ describe('Array', function(){
   it("should check for no full house", function(){
     var fullHouse = poker.checkForFullHouse(hand4);
     assert.deepEqual(fullHouse, 0);
+  });
+
+ it("should check for poker", function(){
+    var poker1 = poker.checkForFourOfAKind(hand6);
+    assert.deepEqual(poker1, 12);
   });
 })
