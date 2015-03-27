@@ -54,4 +54,13 @@ describe('Array', function(){
     assert.deepEqual(triple, []);
   });
 
+  it("should check for straight", function(){
+    var straight = poker.checkForStraight(hand1);
+    assert.deepEqual(straight, 20);
+  });
+
+  it("should check for no straight", function(){
+    var straight = poker.checkForStraight(hand2);
+    assert.deepEqual(straight, 0);
+  });
 })
