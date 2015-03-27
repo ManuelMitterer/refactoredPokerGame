@@ -20,9 +20,9 @@ Poker.sortHand = function(hand) {
 };
 
 Poker.prototype.checkForPairs = function(hand, pairs) {
-	Poker.sortHand(hand);
-
 	var pairs = pairs || [];
+
+	Poker.sortHand(hand);
 
 	if(hand.length <= 1) return pairs;
 	else if(typeof(hand[1]) !== 'undefined' && hand[0][0] == hand[1][0]){
@@ -32,17 +32,10 @@ Poker.prototype.checkForPairs = function(hand, pairs) {
 	else return this.checkForPairs(hand.splice(1, hand.length-1), pairs);
 };
 
-Poker.prototype.checkForTwoPair = function(hand) {
-	firstPair  = this.checkForPair(hand);
-	secondPair = this.checkForPair(hand, 1);
-
-	return [firstPair, secondPair];
-};
-
 Poker.prototype.checkForTriple = function(hand) {
 	Poker.sortHand(hand);
 
-	for(var i = 0; i < hand.length; i++) {
+	for(var i = 0; i < hand.length-2; i++) {
 		if(hand[i][0] === hand[i+1][0] && hand[i][0] === hand[i+2][0] ) {
 			return hand[i][0] * 3;
 		}
