@@ -15,10 +15,10 @@
 <div class="header low">
     <h1>Code coverage report for <span class="entity">src\src.js</span></h1>
     <h2>
-        Statements: <span class="metric">24.42% <small>(21 / 86)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">9.09% <small>(4 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">28.57% <small>(4 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">24.42% <small>(21 / 86)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">37.21% <small>(32 / 86)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">29.55% <small>(13 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">35.71% <small>(5 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">37.21% <small>(32 / 86)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">src/</a> &#187; src.js</div>
@@ -183,34 +183,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">10</span>
-<span class="cline-any cline-yes">10</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -335,30 +335,30 @@ Poker.sortHand = function(hand) {
 &nbsp;
 		<span class="missing-if-branch" title="if path not taken" >I</span>if(array1[0] &gt; array2[0]) {
 <span class="cstat-no" title="statement not covered" >			return -1;</span>
-		} else <span class="missing-if-branch" title="else path not taken" >E</span>if(array1[0] &lt; array2[0]) {
+		} else if(array1[0] &lt; array2[0]) {
 			return 1;
 		}
-<span class="cstat-no" title="statement not covered" >		return 0;</span>
+		return 0;
 	});
 };
 &nbsp;
-Poker.prototype.checkForPair = <span class="fstat-no" title="function not covered" >function(hand, skipPairs) {</span>
-<span class="cstat-no" title="statement not covered" >	skipPairs = skipPairs || 0;</span>
+Poker.prototype.checkForPair = function(hand, skipPairs) {
+	skipPairs = skipPairs || 0;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	Poker.sortHand(hand);</span>
+	Poker.sortHand(hand);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	for(var i = 0; i &lt; hand.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >		if(typeof(hand[i+1]) !== 'undefined' &amp;&amp; hand[i][0] === hand[i+1][0]) {</span>
-<span class="cstat-no" title="statement not covered" >			if (skipPairs &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >				skipPairs--;</span>
-<span class="cstat-no" title="statement not covered" >				i++;</span>
-<span class="cstat-no" title="statement not covered" >				continue;</span>
+	for(var i = 0; i &lt; hand.length; i++) {
+		if(typeof(hand[i+1]) !== 'undefined' &amp;&amp; hand[i][0] === hand[i+1][0]) {
+			if (skipPairs &gt; 0) {
+				skipPairs--;
+				i++;
+				continue;
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			return hand[i][0] * 2;</span>
+			return hand[i][0] * 2;
 		}
 	}
-<span class="cstat-no" title="statement not covered" >	return 0;</span>
+	return 0;
 };
 &nbsp;
 Poker.prototype.checkForTwoPair = <span class="fstat-no" title="function not covered" >function(hand) {</span>
@@ -474,7 +474,7 @@ module.exports = Poker;</pre></td></tr>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 27 2015 14:38:55 GMT+0100 (Mitteleuropäische Zeit)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 27 2015 14:41:19 GMT+0100 (Mitteleuropäische Zeit)</div>
 </div>
 <script src="../prettify.js"></script>
 <script>

@@ -1,7 +1,7 @@
 var assert = require("assert"),
     Poker = require("../src/src.js"),
     should = require("should"),
-    poker, hand1, hand2, hand3;
+    poker, hand1, hand2, hand3, hand4;
 
 describe('Array', function(){
   beforeEach(function(){
@@ -9,6 +9,7 @@ describe('Array', function(){
     hand1 = [[2, 'C'], [3, 'C'], [4, 'C'], [5, 'C'], [6, 'C']];
     hand2 = [[2, 'C'], [3, 'C'], [1, 'C'], [10, 'C'], [12, 'C']];
     hand3 = [[2, 'D'], [2, 'H'], [5, 'D'], [11, 'H'], [12, 'H']];
+    hand4 = [[2, 'D'], [2, 'H'], [11, 'D'], [11, 'H'], [12, 'H']];
   });
 
   it('should be different', function(){
@@ -26,4 +27,19 @@ describe('Array', function(){
     assert.deepEqual(highest[0], 6);
   });
 
+  it("should check for pair", function(){
+    var pair = poker.checkForPair(hand3);
+    assert.deepEqual(pair, 4);
+  });
+
+  it("should check for pair, skip first pair", function(){
+    var pair = poker.checkForPair(hand4, 1);
+    assert.deepEqual(pair, 4);
+  });
+
+  it("should check for pair, no hand", function(){
+    var tempHand = [];
+    var pair = poker.checkForPair(tempHand);
+    assert.deepEqual(pair, 0);
+  });
 })
