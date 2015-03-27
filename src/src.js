@@ -19,14 +19,17 @@ Poker.sortHand = function(hand) {
 	});
 };
 
-Poker.prototype.checkForPair = function(hand) {
+Poker.prototype.checkForPairs = function(hand, pairs) {
 	Poker.sortHand(hand);
 
-	if(hand.length <= 1) return 0
+	var pairs = pairs || [];
+
+	if(hand.length <= 1) return pairs;
 	else if(typeof(hand[1]) !== 'undefined' && hand[0][0] == hand[1][0]){
-		return (hand[0][0]*2);
+		pairs.push(hand[0][0]*2);
+		return this.checkForPairs(hand.splice(2, hand.length-1), pairs);
 	}
-	else return this.checkForPair(hand.splice(1, hand.length-1));
+	else return this.checkForPairs(hand.splice(1, hand.length-1), pairs);
 };
 
 Poker.prototype.checkForTwoPair = function(hand) {

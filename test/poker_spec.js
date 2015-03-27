@@ -28,18 +28,18 @@ describe('Array', function(){
   });
 
   it("should check for pair", function(){
-    var pair = poker.checkForPair(hand3);
-    assert.deepEqual(pair, 4);
+    var pair = poker.checkForPairs(hand3);
+    assert.deepEqual(pair, [4]);
   });
 
-  it("should check for pair, skip first pair", function(){
-    var pair = poker.checkForPair(hand4, 1);
-    assert.deepEqual(pair, 4);
+  it("should check for two pairs", function(){
+    var pair = poker.checkForPairs(hand4);
+    assert.deepEqual(pair, [22, 4]);
   });
 
   it("should check for pair, no hand", function(){
     var tempHand = [];
-    var pair = poker.checkForPair(tempHand);
-    assert.deepEqual(pair, 0);
+    var pair = poker.checkForPairs(tempHand);
+    assert.deepEqual(pair, []);
   });
 })
