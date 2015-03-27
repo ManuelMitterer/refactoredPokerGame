@@ -41,21 +41,17 @@ Poker.prototype.checkForStraight = function(hand, sum){
 	Poker.sortHand(hand);
 
 	if(hand.length <= 1) return sum + hand[0][0];
-	else if('undefined' !== typeof(hand[1]) && (hand[0][0] - hand[1][0]) !== 1){
-		return 0;
-	}
+	else if('undefined' !== typeof(hand[1]) && (hand[0][0] - hand[1][0]) !== 1) return 0;
 	else return this.checkForStraight(hand.splice(1, hand.length-1), sum + hand[0][0]);
 };
 
-Poker.prototype.checkForFlush = function(hand) {
-	var color = hand[0][1];
-	for(var i = 0; i < hand.length; i++){
-		if (hand[i][1] !== color) {
-			return 0;
-		}
-	}
+Poker.prototype.checkForFlush = function(hand, color) {
+	var color = color || hand[0][1];
+	Poker.sortHand(hand);
 
-	return this.getHighestCard(hand)[0];
+	if(hand.length <= 1) return hand[0][0];
+	else if(hand[0][1] !== color) return 0;
+	else return this.checkForFlush(hand.splice(0, hand.length-2, color));
 };
 
 Poker.prototype.checkForFullHouse = function(hand) {
