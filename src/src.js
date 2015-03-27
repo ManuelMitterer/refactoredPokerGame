@@ -20,17 +20,18 @@ Poker.sortHand = function(hand) {
 };
 
 Poker.prototype.checkForMatches = function(hand, matches) {
-	var matches = matches || [];
+	var matches = matches || {};
 
 	Poker.sortHand(hand);
 
 	if(hand.length <= 1) return matches;
 	else if(typeof(hand[1]) !== 'undefined' && hand[0][0] === hand[1][0] && typeof(hand[2]) !== 'undefined' && hand[0][0] === hand[2][0]){
-		matches.push(hand[0][0]*3);
+		matches['triple'] = hand[0][0]*3;
 		return this.checkForMatches(hand.splice(3, hand.length-1), matches);
 	}
 	else if(typeof(hand[1]) !== 'undefined' && hand[0][0] === hand[1][0]){
-		matches.push(hand[0][0]*2);
+		if(typeof(matches.doubles) === 'undefined') matches.doubles = [];
+		matches.doubles.push(hand[0][0]*2);
 		return this.checkForMatches(hand.splice(2, hand.length-1), matches);
 	}
 	else return this.checkForMatches(hand.splice(1, hand.length-1), matches);
@@ -55,6 +56,9 @@ Poker.prototype.checkForFlush = function(hand, color) {
 };
 
 Poker.prototype.checkForFullHouse = function(hand) {
+	var matches = this.checkForMatches(hand);
+	console.log(matches);
+
 	var twoPairScore = this.checkForTwoPair(hand);
 	var tripleScore = this.checkForTriple(hand);
 	var fourOfAKindScore = this.checkForFourOfAKind(hand);

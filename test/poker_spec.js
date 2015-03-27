@@ -30,28 +30,28 @@ describe('Array', function(){
 
   it("should check for pair", function(){
     var pair = poker.checkForMatches(hand3);
-    assert.deepEqual(pair, [4]);
+    assert.deepEqual(pair.doubles, [4]);
   });
 
   it("should check for two pairs", function(){
     var pair = poker.checkForMatches(hand4);
-    assert.deepEqual(pair, [22, 4]);
+    assert.deepEqual(pair.doubles, [22, 4]);
   });
 
   it("should check for pair, no hand", function(){
     var tempHand = [];
     var pair = poker.checkForMatches(tempHand);
-    assert.deepEqual(pair, []);
+    assert.deepEqual(pair, {});
   });
 
   it("should check for triple", function(){
     var triple = poker.checkForMatches(hand5);
-    assert.deepEqual(triple, [10, 6]);
+    assert.deepEqual(triple.triple, 6);
   });
 
   it("should check for no triple", function(){
     var triple = poker.checkForMatches(hand1);
-    assert.deepEqual(triple, []);
+    assert.deepEqual(triple, {});
   });
 
   it("should check for straight", function(){
@@ -74,4 +74,13 @@ describe('Array', function(){
     assert.deepEqual(flush, 0);
   });
 
+  it("should check for full house", function(){
+    var fullHouse = poker.checkForFullHouse(hand5);
+    assert.deepEqual(fullHouse, 5);
+  });
+
+  it("should check for no full house", function(){
+    var fullHouse = poker.checkForFullHouse(hand4);
+    assert.deepEqual(fullHouse, 0);
+  });
 })
