@@ -46,13 +46,13 @@ Poker.prototype.checkForStraight = function(hand, sum){
 	else return this.checkForStraight(hand.splice(1, hand.length-1), sum + hand[0][0]);
 };
 
-Poker.prototype.checkForFlush = function(hand, color) {
-	var color = color || hand[0][1];
-	Poker.sortHand(hand);
+Poker.prototype.checkForFlush = function(subhand, color) {
+	var color = color || subhand[0][1];
+	Poker.sortHand(subhand);
 
-	if(hand.length <= 1) return hand[0][0];
-	else if(hand[0][1] !== color) return 0;
-	else return this.checkForFlush(hand.splice(0, hand.length-2, color));
+	if(subhand.length <= 1) return subhand[0][0];
+	else if(subhand[0][1] !== color) return 0;
+	else return this.checkForFlush(subhand.splice(0, subhand.length-2, color));
 };
 
 Poker.prototype.checkForFullHouse = function(hand) {
@@ -72,7 +72,8 @@ Poker.prototype.checkForFourOfAKind = function(hand, count) {
 };
 
 Poker.prototype.checkForStraightFlush = function(hand) {
-	var flush = this.checkForFlush(hand);
+	var handclone = hand.slice(0);
+	var flush = this.checkForFlush(handclone);
 	var straight = this.checkForStraight(hand);
 
 	if(flush > 0 && straight > 0) {

@@ -89,4 +89,15 @@ describe('Array', function(){
     var poker1 = poker.checkForFourOfAKind(hand6);
     assert.deepEqual(poker1, 12);
   });
+
+   it("should check for straight flush", function(){
+    var straightFlush = poker.checkForStraightFlush(hand1);
+    assert.deepEqual(straightFlush, 6);
+  });
+
+  it("should check for no straight flush", function(){
+    var straightFlush = poker.checkForStraightFlush(hand2);
+    assert.deepEqual(straightFlush, 0);
+  });
+
 })
