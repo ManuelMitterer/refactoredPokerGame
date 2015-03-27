@@ -100,4 +100,22 @@ describe('Array', function(){
     assert.deepEqual(straightFlush, 0);
   });
 
+  it("should compare highest cards, first hand highest", function(){
+    var highestCard = poker.compareHighestCards(hand2, hand1);
+    var highest = {'hand': [[12, 'C'], [10, 'C'], [3, 'C'], [2, 'C'], [1, 'C']], 'card': [12, 'C']};
+    assert.deepEqual(highestCard, highest);
+  });
+
+  it("should compare highest cards, second hand highest", function(){
+    var highestCard = poker.compareHighestCards(hand1, hand2);
+    var highest = { 'hand' : [[12, 'C'], [10, 'C'], [3, 'C'], [2, 'C'], [1, 'C']], 'card': [12, 'C']};
+    assert.deepEqual(highestCard, highest);
+  });
+
+  it("should compare highest cards, same highest cards", function(){
+    var highestCard = poker.compareHighestCards(hand2, hand2);
+    assert.deepEqual(highestCard, {});
+  });
+
+
 })
