@@ -145,3 +145,5 @@ Poker.prototype.compareHighestPair = function(hand1, hand2) {
 
 	return {};
 };
+
+module.exports = Poker;
