@@ -57,16 +57,7 @@ Poker.prototype.checkForFlush = function(hand, color) {
 
 Poker.prototype.checkForFullHouse = function(hand) {
 	var matches = this.checkForMatches(hand);
-	console.log(matches);
-
-	var twoPairScore = this.checkForTwoPair(hand);
-	var tripleScore = this.checkForTriple(hand);
-	var fourOfAKindScore = this.checkForFourOfAKind(hand);
-
-	if(twoPairScore[0] > 0 && twoPairScore[1] > 0 && tripleScore > 0 && fourOfAKindScore === 0) {
-		return this.getHighestCard(hand)[0];
-	}
-
+	if(matches.hasOwnProperty('doubles') && matches.hasOwnProperty('triple')) return matches.triple;
 	return 0;
 };
 

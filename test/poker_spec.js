@@ -76,7 +76,7 @@ describe('Array', function(){
 
   it("should check for full house", function(){
     var fullHouse = poker.checkForFullHouse(hand5);
-    assert.deepEqual(fullHouse, 5);
+    assert.deepEqual(fullHouse, 6);
   });
 
   it("should check for no full house", function(){
