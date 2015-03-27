@@ -85,9 +85,14 @@ describe('Array', function(){
     assert.deepEqual(fullHouse, 0);
   });
 
- it("should check for poker", function(){
+  it("should check for poker", function(){
     var poker1 = poker.checkForFourOfAKind(hand6);
     assert.deepEqual(poker1, 12);
+  });
+
+  it("should check for no poker", function(){
+    var poker1 = poker.checkForFourOfAKind(hand1);
+    assert.deepEqual(poker1, 0);
   });
 
    it("should check for straight flush", function(){
@@ -117,5 +122,20 @@ describe('Array', function(){
     assert.deepEqual(highestCard, {});
   });
 
+  it("should compare highest pair, first hand highest", function(){
+    var highestPair = poker.compareHighestPair(hand4, hand3);
+    var highest = {'hand': [[12, 'H'], [11, 'D'], [11, 'H'], [2, 'D'], [2, 'H']], 'score': 11};
+    assert.deepEqual(highestPair, highest);
+  });
 
+  it("should compare highest pair, second hand highest", function(){
+    var highestPair = poker.compareHighestPair(hand3, hand4);
+    var highest = {'hand': [[12, 'H'], [11, 'D'], [11, 'H'], [2, 'D'], [2, 'H']], 'score': 11};
+    assert.deepEqual(highestPair, highest);
+  });
+
+  it("should compare highest pair, same pair", function(){
+    var highestPair = poker.compareHighestPair(hand4, hand4);
+    assert.deepEqual(highestPair, {});
+  });
 })

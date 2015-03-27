@@ -102,8 +102,11 @@ Poker.prototype.compareHighestCards = function(hand1, hand2){
 };
 
 Poker.prototype.compareHighestPair = function(hand1, hand2) {
-	var hand1Pair = this.checkForPair(hand1);
-	var hand2Pair = this.checkForPair(hand2);
+	var hand1Pair = this.checkForMatches(hand1.slice(0)).doubles[0];
+	var hand2Pair = this.checkForMatches(hand2.slice(0)).doubles[0];
+
+	Poker.sortHand(hand1);
+	Poker.sortHand(hand2);
 
 	if (hand1Pair > hand2Pair) {
 		return {'hand': hand1, 'score': hand1Pair / 2};
