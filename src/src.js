@@ -19,29 +19,21 @@ Poker.sortHand = function(hand) {
 	});
 };
 
-Poker.prototype.checkForPairs = function(hand, pairs) {
-	var pairs = pairs || [];
+Poker.prototype.checkForMatches = function(hand, matches) {
+	var matches = matches || [];
 
 	Poker.sortHand(hand);
 
-	if(hand.length <= 1) return pairs;
-	else if(typeof(hand[1]) !== 'undefined' && hand[0][0] == hand[1][0]){
-		pairs.push(hand[0][0]*2);
-		return this.checkForPairs(hand.splice(2, hand.length-1), pairs);
+	if(hand.length <= 1) return matches;
+	else if(typeof(hand[1]) !== 'undefined' && hand[0][0] === hand[1][0] && typeof(hand[2]) !== 'undefined' && hand[0][0] === hand[2][0]){
+		matches.push(hand[0][0]*3);
+		return this.checkForMatches(hand.splice(3, hand.length-1), matches);
 	}
-	else return this.checkForPairs(hand.splice(1, hand.length-1), pairs);
-};
-
-Poker.prototype.checkForTriple = function(hand) {
-	Poker.sortHand(hand);
-
-	for(var i = 0; i < hand.length-2; i++) {
-		if(hand[i][0] === hand[i+1][0] && hand[i][0] === hand[i+2][0] ) {
-			return hand[i][0] * 3;
-		}
+	else if(typeof(hand[1]) !== 'undefined' && hand[0][0] === hand[1][0]){
+		matches.push(hand[0][0]*2);
+		return this.checkForMatches(hand.splice(2, hand.length-1), matches);
 	}
-
-	return 0;
+	else return this.checkForMatches(hand.splice(1, hand.length-1), matches);
 };
 
 Poker.prototype.checkForStraight = function(hand){

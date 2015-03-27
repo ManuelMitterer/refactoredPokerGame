@@ -29,29 +29,29 @@ describe('Array', function(){
   });
 
   it("should check for pair", function(){
-    var pair = poker.checkForPairs(hand3);
+    var pair = poker.checkForMatches(hand3);
     assert.deepEqual(pair, [4]);
   });
 
   it("should check for two pairs", function(){
-    var pair = poker.checkForPairs(hand4);
+    var pair = poker.checkForMatches(hand4);
     assert.deepEqual(pair, [22, 4]);
   });
 
   it("should check for pair, no hand", function(){
     var tempHand = [];
-    var pair = poker.checkForPairs(tempHand);
+    var pair = poker.checkForMatches(tempHand);
     assert.deepEqual(pair, []);
   });
 
   it("should check for triple", function(){
-    var triple = poker.checkForTriple(hand5);
-    assert.deepEqual(triple, 6);
+    var triple = poker.checkForMatches(hand5);
+    assert.deepEqual(triple, [10, 6]);
   });
 
   it("should check for no triple", function(){
-    var triple = poker.checkForTriple(hand3);
-    assert.deepEqual(triple, 0);
+    var triple = poker.checkForMatches(hand1);
+    assert.deepEqual(triple, []);
   });
 
 })
